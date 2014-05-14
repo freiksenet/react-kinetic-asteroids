@@ -5,7 +5,7 @@ deps := ./node_modules
 deps_installed := $(deps)/installed
 
 browserify := $(deps)/browserify/bin/cmd.js
-browserify_flags := -r ./react-kinetic-asteroids
+browserify_flags := -r ./react-kinetic-asteroids -r react
 beefy := $(deps)/beefy/bin/beefy
 
 js_files := $(shell find src/ -type f -name '*.js')
@@ -24,7 +24,7 @@ $(OUT)/react-kinetic-asteroids.js: react-kinetic-asteroids.js $(js_files) $(deps
 
 .PHONY: demo
 demo: $(deps_installed)
-	$(beefy) react-kinetic-asteroids.js --live --browserify $(browserify) -- $(browserify_flags)
+	$(beefy) react-kinetic-asteroids.js --live --browserify $(browserify) -- $(browserify_flags) -d
 
 $(OUT)/index.html: index.html $(OUT)
 	cp $< $@

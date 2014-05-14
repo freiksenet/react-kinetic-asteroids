@@ -11,16 +11,25 @@
   "dependencies": {
     "react": "",
     "react-kinetic": "",
+    "envify": "1.2.1",
     "browserify": "3.41.x",
-    "reactify": "0.13.1"
+    "browserify-shim": "3.5.0",
+    "reactify": "0.13.1",
+    "lodash": "2.4.1"
   },
   "devDependencies": {
     "beefy": "1.1.0"
   },
 
-  "main": "react-kinetic-asteroids.js",
+  "main": "./react-kinetic-asteroids",
 
   "browserify": {
-    "transform": ["reactify"]
+    "transform": ["reactify", "browserify-shim"]
+  },
+  "browser": {
+    "CreateJS": "./dir-of-shame/preloadjs-0.4.1.min.js"
+  },
+  "browserify-shim": {
+    "CreateJS": "createjs"
   }
 }
