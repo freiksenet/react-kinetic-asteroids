@@ -1,0 +1,26 @@
+{
+  "name": "react-kinetic-asteroids",
+  "version": "0.0.1",
+  "author": "Mikhail <freiksenet@gmail.com> Novikov",
+  "description": "react-kinetic demo game",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freiksenet/react-kinetic-asteroids.git"
+  },
+  "dependencies": {
+    "react": "",
+    "react-kinetic": "",
+    "browserify": "3.41.x",
+    "reactify": "0.13.1"
+  },
+  "devDependencies": {
+    "beefy": "1.1.0"
+  },
+
+  "main": "react-kinetic-asteroids.js",
+
+  "browserify": {
+    "transform": ["reactify"]
+  }
+}
