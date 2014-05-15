@@ -9,6 +9,7 @@ var InputHandler = require('./InputHandler');
 var ResourceLoader = require('./ResourceLoader');
 
 var Ship = require('./Ship');
+var Asteroid = require('./Asteroid');
 
 var Stage = ReactKinetic.Stage;
 var Layer = ReactKinetic.Layer;
@@ -32,7 +33,10 @@ var Game = React.createClass({
       playerRot: 0,
       playerRotVel: 0,
       playerRotAcc: 0,
-      currentTick: 0
+      currentTick: 0,
+      asteroids: [{
+       pos: [50, 50]
+      }]
     };
   },
 
@@ -133,6 +137,13 @@ var Game = React.createClass({
 
   render: function () {
     var planeSprite = this.props.resourceLoader.getResource('planeSprite');
+    var asteroids = this.state.asteroids.map(function (asteroid, i) {
+      return (
+        <Asteroid key={i}
+                  x={asteroid.pos[0]}
+                  y={asteroid.pos[1]} />
+      );
+    });
     return (
       <Layer>
         <Ship x={this.state.playerPos[0]}
@@ -141,6 +152,7 @@ var Game = React.createClass({
               rotVel={this.state.playerRotVel}
               velX={this.state.playerVelX}
               image={planeSprite}/>
+        {asteroids}
       </Layer>
     );
   }
