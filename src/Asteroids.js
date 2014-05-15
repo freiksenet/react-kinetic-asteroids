@@ -78,6 +78,20 @@ var Game = React.createClass({
         diff
       );
 
+      var newLatPos = latResult.pos;
+
+      if (newLatPos[0] < 0 - this.props.shipHeight) {
+        newLatPos[0] = this.props.width;
+      } else if (newLatPos[0] > this.props.width + this.props.shipHeight) {
+        newLatPos[0] = this.props.width - newLatPos[0];
+      }
+
+      if (newLatPos[1] < 0 - this.props.shipHeight) {
+        newLatPos[1] = this.props.height;
+      } else if (newLatPos[1] > this.props.height + this.props.shipHeight) {
+        newLatPos[1] = this.props.height - newLatPos[1];
+      }
+
       var rotResult = Physics.simulateOffset(
         rotation,
         this.state.playerRotVel,
