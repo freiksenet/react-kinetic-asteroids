@@ -52,9 +52,9 @@ var Game = React.createClass({
       var latAcc;
 
       if (inputHandler.leftOn) {
-        rotAcc  = this.props.shipRotAcceleration;
+        rotAcc  = -this.props.shipRotAcceleration;
       } else if (inputHandler.rightOn) {
-        rotAcc = -this.props.shipRotAcceleration;
+        rotAcc = this.props.shipRotAcceleration;
       } else if (rotVel > 0) {
         rotAcc = -this.props.shipRotAcceleration;
       } else if (rotVel < 0) {
