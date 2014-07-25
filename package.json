@@ -9,8 +9,8 @@
     "url": "https://github.com/freiksenet/react-kinetic-asteroids.git"
   },
   "dependencies": {
-    "react": "",
-    "react-kinetic": "",
+    "react": "0.11.0",
+    "react-kinetic": "0.1.1",
     "envify": "1.2.1",
     "browserify": "3.41.x",
     "browserify-shim": "3.5.0",
